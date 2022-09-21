@@ -10,6 +10,7 @@ import json
 from sqlalchemy import create_engine
 import sqlite3 as sql
 import pandas as pd
+postgres_uri  = os.environ.get('DATABASE_URL')
 
 
 #################################################
@@ -20,9 +21,9 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-DB_conn = "postgresql://yumurxqtwshjnx:fd683e2aa6f171ff752079e8833a7c447db446d1f2f363444e9a7647c1488e10@ec2-18-209-78-11.compute-1.amazonaws.com:5432/d6f887ofgg2ipi"
+#DB_conn = "postgresql://yumurxqtwshjnx:fd683e2aa6f171ff752079e8833a7c447db446d1f2f363444e9a7647c1488e10@ec2-18-209-78-11.compute-1.amazonaws.com:5432/d6f887ofgg2ipi"
 
-engine = create_engine (DB_conn)
+engine = create_engine (postgres_uri)
 
 # Remove tracking modifications
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
