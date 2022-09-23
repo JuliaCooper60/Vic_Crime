@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="static/CSS/styles.css">>
+  <link rel="stylesheet" href="static/css/styles.css">>
   <link rel="stylesheet" href="static/d3/style.css">">
   <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css">
 
@@ -128,7 +128,40 @@
       diameter = +svg.attr("width"),
       g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-    var color = d3.scaleOrdinal().range(d3.schemeCategory10)
+  // This is where I ahve strted adding your code 
+  
+      var color = d3.scaleOrdinal().range(d3.schemeCategory10)
+
+    offenceDivisions = [
+  0: "A Crimes against the person "
+  1: "B Property and deception offences"
+  2: "C Drug offences"
+  3: "D Public order and security offencesords"
+  5: "E Justice procedures offences"
+  6: "F Other offences "
+]
+      = {
+        color.domain([
+  0: "A Crimes against the person "
+  1: "B Property and deception offences"
+  2: "C Drug offences"
+  3: "D Public order and security offencesords"
+  4: "E Justice procedures offences"
+  5: "F Other offences "
+].split(/ /));
+        return color.domain();
+}
+
+offenceDivisionColors = [
+  0: "#cbd4c2ff"
+  1: "#dbebc0ff"
+  2: "#c3b299ff"
+  3: "#815355ff"
+  4: "#523249ff"
+  5: "'#000000'
+]
+// This is where it ends 
+
 
     var color = d3.scaleLinear()
       .domain([-1, 5])
