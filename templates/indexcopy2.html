@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-    <link rel="stylesheet" href="static/CSS/styles.css">
-    <link rel="stylesheet" href="static/CSS/d3Style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/d3Style.css') }}">
     <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
@@ -27,7 +27,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Crime in Victoria 2019-2022</a>
+            <a class="navbar-brand" href="/">Crime in Victoria 2019-2022</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -39,7 +39,8 @@
                         <a class="nav-link active" href="indexoffendingpatterns.html">Offending Patterns 2019-2022</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link active" href="Index2022.html">Click to explore the offending patterns for 2022</a>
+                        <a class="nav-link active" href="/Crime 2022">Click to explore the offending patterns for
+                            2022</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
@@ -53,10 +54,7 @@
 
     <!-- iframe width=“600” height=“371" seamless frameborder=“0” scrolling=“no” src=“https://docs.google.com/spreadsheets/d/e/2PACX-1vR6VQMj_vmXqKS2Lv0nB6zD0KRopezDrzqIGbgZmN_Pj93je4edWCwYtAoZOEd4ekM7pJ1OAA3hJLOZ/pubchart?oid=68467391&amp;format=interactive”></iframe> -->
 
-   <!-- <div class="sidenav">
-        <a Href = ID -->
-   
-    <section class="row" style="background-color: #b8bcc2;">
+    <section class="row">
         <div class="col-sm-12">
             <section style="padding: 30px; background-color:white;">
 
@@ -75,38 +73,38 @@
                         <div style="
     margin-left: 0px;
     padding-left: 16px;">
-                            <div class="col-md-2">
-                                <div class="well">
-                                    <h5>Select LGA:</h5>
-                                    <select id="selLGA" onchange="optionChanged(this.value)"></select>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
-
-                    <!-- <div class="row">
-                        <div class="col-xs-12  col-md-6 -->
-                    ">
-
-                    <div class="card-body">
-                        <h4 class="card-title">Offence Types in Victoria 2019-2022</h4>
-                        <br>
-                        <p class="card-text"> 
-                            Context: Crimes are reportd by five geographical levels in Victoria. 
-                            They are grouped into 6 separate 'Offence Divisions' with each of these divisions being broken 
-                            down into Subdivisions and then further into Subgroups.
-                            <br><br>
-                            The chart above provides an overview of the number of incidents by Offence Division from March to March over 4 years. The information can be viewed as a total by selcting 'All' 
-                            or filtered by any Local Government Area (LGA). 
-                            <br><br>
-                            Property and deception offences account for the majority of incidences actross all years. They increased in 2020
-                            and have tapered off over the past 2 years. The number of reported 'crimes against the person' increased slightly in 2020.  
-                            <br><br>
-                            The 'Offending 2022' tab at the top right leads to a more granular view of the types and volumes of Sub Offences and Subgroups
-                            for each Offence Division.
-                        </p>
-                    </div>
                 </div>
+
+                <!-- <div class="row">
+                        <div class="col-xs-12  col-md-6 -->
+
+
+                <div class="card-body">
+                    <h4 class="card-title">Offence Types in Victoria 2019-2022</h4>
+                    <br>
+                    <p class="card-text">
+                        Context: Crimes are reportd by five geographical levels in Victoria.
+                        They are grouped into 6 separate 'Offence Divisions' with each of these divisions being broken
+                        down into Subdivisions and then further into Subgroups.
+                        <br><br>
+                        The chart above provides an overview of the number of incidents by Offence Division from March
+                        to March over 4 years. The information can be viewed as a total by selcting 'All'
+                        or filtered by any Local Government Area (LGA).
+                        <br><br>
+                        Property and deception offences account for the majority of incidences actross all years. They
+                        increased in 2020
+                        and have tapered off over the past 2 years. The number of reported 'crimes against the person'
+                        increased slightly in 2020.
+                        <br><br>
+                        The 'Offending 2022' tab at the top right leads to a more granular view of the types and volumes
+                        of Sub Offences and Subgroups
+                        for each Offence Division.
+                    </p>
+                </div>
+        </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

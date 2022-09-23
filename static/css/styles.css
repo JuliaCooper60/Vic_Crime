@@ -43,10 +43,10 @@
     pointer-events: none;
   }
 
-  /* body, html{
+  body, html{
     background: #181E24;
     padding-top: 10px;
-  } */
+  } 
   
   .wrapper{
     width:60%;
@@ -58,12 +58,12 @@
     border-radius:4px;
   }
   
-  /* canvas{
+  canvas{
     background:#fff;
     height:400px;
-  } */
+  } 
   
-  /* h1{
+  h1{
     font-family: Roboto;
     color: #fff;
     margin-top:50px;
@@ -71,105 +71,46 @@
     text-align: center;
     display: block;
     text-decoration: none;
-  } */
+  } 
   
- 
- /* .spacing{
-     margin-left: 50%;
- } */
- 
- /* #contact-info {
-     width: 60%;
-   } */
-/*  
-   .comparison-image{
-     float: left;
-     padding: 0 20px 20px 0;
-     width: 100%;
-   } */
 
-/* 
-   html {
-    position: relative;
-    min-height: 100%;
-} */
-/* 
-body {
+
+body { 
     margin-bottom: 150px;
     /*  google colour picker */
     background-color: #eceef2;
     font-family: 'Quicksand';font-size: 20px;
-/* } */ */
+    /* background-image: url("Picture 1.jpg"); */
+    /* opacity: .2; */
 
-/* html {
-  position: relative;
-  min-height: 100%;
-} */
+}
 
-/* body {
-  margin-bottom: 150px;
-  /*  google colour picker */
-  background-color: #eceef2;
-  font-family: 'Quicksand';font-size: 20px;
-/* } */ */
-/* .img-thumbnail {
-  float: left;
-  padding: 0 20px 20px 0;
-} */
-/* 
-.imageNav-photo {
+#sidebar-image {
+  /* background-image: url("Picture 2.jpg") repeat; 
+  opacity: .2;
+  border:  2px solid black; */
+  background-color:  170F33 
+}
+
+#transbox {
+  /* background-image: url("Picture 2.jpg") repeat;  */
+  /* opacity: .2; */
+  /* border:  2px solid black; */
+ 
+
+}
+
+
+/* .imageNav-photo {
   Width:180px;
   height: 150px;
   border: 2px solid #4AAAA5; 
-} */
-
-/* .imageNav-photo2 {
-  Width:180px;
-  height: 150px;
-} */
-/* .text {
-  float: right;
-  padding: 0 0 20px 20px;
-} */
+}  */
 
 
 
-/* .col-md-4 {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 10px;
-} */
-/* 
-.col-md-4 img{
-  max-width: 500px; 
-  height: auto;
-  margin-top: 10px;
-  display: block;
-  margin: auto;
-  border: 3px;
-} */
-/* 
-.frontimage{
-float:left;
-width: 200px;
-height: 200px;
-} */
 
-/* .img-thumbnail{
-width: 50%;
-} */
 
-/* .navbar-brand{
-
- font-size: 80px;
- font-weight: bold;
- color: lightseagreen;
-  } */
-/* 
-  h3 {
-      color: lightseagreen;
-      font-weight: bold;
-  } */
 
   h2 {
       color: lightseagreen;
@@ -179,12 +120,3 @@ width: 50%;
   margin-left: 50%;
 }
 
-/* #contact-info {
-  width: 60%;
-} */
-
-/* .comparison-image{
-  float: left;
-  padding: 0 20px 20px 0;
-  width: 100%;
-} */

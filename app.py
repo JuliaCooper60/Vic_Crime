@@ -21,9 +21,9 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-#DB_conn = "postgresql://yumurxqtwshjnx:fd683e2aa6f171ff752079e8833a7c447db446d1f2f363444e9a7647c1488e10@ec2-18-209-78-11.compute-1.amazonaws.com:5432/d6f887ofgg2ipi"
+DB_conn = "postgresql://yumurxqtwshjnx:fd683e2aa6f171ff752079e8833a7c447db446d1f2f363444e9a7647c1488e10@ec2-18-209-78-11.compute-1.amazonaws.com:5432/d6f887ofgg2ipi"
 
-engine = create_engine (postgres_uri)
+engine = create_engine (DB_conn)
 
 # Remove tracking modifications
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
