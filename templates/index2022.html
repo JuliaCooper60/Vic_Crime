@@ -6,46 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crime in Victoria 2019-2022 - Julia Cooper</title>
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="static/css/styles.css">>
-  <link rel="stylesheet" href="static/d3/style.css">">
-  <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css">
-
+ 
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+  <link rel="stylesheet" href="../static/css/styles.css">
+  <link rel="stylesheet" href="../static/d3/style.css">
+  <!-- <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css"> -->
 </head>
 
 
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Click to return to 'Crime in Victoria 2019-2022' page</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        <h1>Offending Patterns 2022</h1>
+        
+          <!-- <a class="navbar-brand" href="/">Click to return to 'Crime in Victoria 2019-2022' page</a> -->
+          <!-- <li class="nav-item"> -->
+            <a class="nav-link active" href="/">Click to return to 'Crimes in Victoria 2019-2022'</a>
+        <!-- </li> -->
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
               aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse spacing" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" href="index2022.html">Offending Patterns 2022</a>
-                  </li>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
+                  <!-- <li class="nav-item">
+                      <a class="nav-link active" href="crime_2022">Offending Patterns 2022</a>
+                  </li> -->
                   <!-- <li class="nav-item">
                       <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2022</a>
                   </li> -->
                   <!-- <li class="nav-item">
                       <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
                   </li> -->
-              </ul>
+              <!-- </ul> -->
           </div>
       </div>
   </nav>
 
-  <div style="position:absolute; bottom: 0; width:100%; height:60px;" >
+  <div style="position:middle; bottom: 0; width:100%; height:60px;" >
     <p></p>
     <!-- boostrp and look for footers fpr minty  -->
   </div>
@@ -130,37 +135,37 @@
 
   // This is where I ahve strted adding your code 
   
-      var color = d3.scaleOrdinal().range(d3.schemeCategory10)
+//       var color = d3.scaleOrdinal().range(d3.schemeCategory10)
 
-    offenceDivisions = [
-  0: "A Crimes against the person "
-  1: "B Property and deception offences"
-  2: "C Drug offences"
-  3: "D Public order and security offencesords"
-  5: "E Justice procedures offences"
-  6: "F Other offences "
-]
-      = {
-        color.domain([
-  0: "A Crimes against the person "
-  1: "B Property and deception offences"
-  2: "C Drug offences"
-  3: "D Public order and security offencesords"
-  4: "E Justice procedures offences"
-  5: "F Other offences "
-].split(/ /));
-        return color.domain();
-}
+//     offenceDivisions = [
+//   0: "A Crimes against the person "
+//   1: "B Property and deception offences"
+//   2: "C Drug offences"
+//   3: "D Public order and security offencesords"
+//   5: "E Justice procedures offences"
+//   6: "F Other offences "
+// ]
+//       = {
+//         color.domain([
+//   0: "A Crimes against the person "
+//   1: "B Property and deception offences"
+//   2: "C Drug offences"
+//   3: "D Public order and security offencesords"
+//   4: "E Justice procedures offences"
+//   5: "F Other offences "
+// ].split(/ /));
+//         return color.domain();
+// }
 
-offenceDivisionColors = [
-  0: "#cbd4c2ff"
-  1: "#dbebc0ff"
-  2: "#c3b299ff"
-  3: "#815355ff"
-  4: "#523249ff"
-  5: "'#000000'
-]
-// This is where it ends 
+// offenceDivisionColors = [
+//   0: "#cbd4c2ff"
+//   1: "#dbebc0ff"
+//   2: "#c3b299ff"
+//   3: "#815355ff"
+//   4: "#523249ff"
+//   5: "'#000000'
+// ]
+// // This is where it ends 
 
 
     var color = d3.scaleLinear()

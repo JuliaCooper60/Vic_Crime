@@ -51,7 +51,7 @@ def crime_summary():
     
         dataStackedBar = {'labels': df.index.tolist(),'datasets':[]}
 
-        colors = ['#cbd4c2ff','#dbebc0ff','#c3b299ff','#815355ff','#523249ff','#000000']
+        colors = ['#cbd4c2ff','#4DC2CA','#c3b299ff','#815355ff','#523249ff','#000000']
         color = 0
         for col in df.columns:
             dataStackedBar['datasets'].append({
@@ -137,7 +137,7 @@ def crime_2022():
 
 
     # create route that renders 2022crime data .html template
-@app.route("/Crime 2022")
+@app.route("/Crime_2022")
 def Crime_2022():
     return render_template("index2022.html")
 
