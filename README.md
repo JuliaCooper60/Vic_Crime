@@ -1,6 +1,6 @@
 # Project 3 - Crime in Victoria 2019-2022
 
-![Crime in Victoria 2019-2022](Images/Police_Picture 1.jpg)
+![Crime in Victoria 2019-2022](/Images/Police_Picture1.jpg)
 
 ## Why this topic?
         1. Data availability 
