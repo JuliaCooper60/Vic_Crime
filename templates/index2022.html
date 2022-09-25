@@ -5,126 +5,68 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crime in Victoria 2019-2022 - Julia Cooper</title>
-  <!-- Our CSS -->
-  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
- 
-  <!-- <link rel="stylesheet" href="styles.css"> -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
   <link rel="stylesheet" href="../static/css/styles.css">
   <link rel="stylesheet" href="../static/d3/style.css">
-  <!-- <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css"> -->
 </head>
-
 
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <h1>Offending Patterns 2022</h1>
-        
-          <!-- <a class="navbar-brand" href="/">Click to return to 'Crime in Victoria 2019-2022' page</a> -->
-          <!-- <li class="nav-item"> -->
-            <a class="nav-link active" href="/">Click to return to 'Crimes in Victoria 2019-2022'</a>
-        <!-- </li> -->
-          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse spacing" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
-                  <!-- <li class="nav-item">
-                      <a class="nav-link active" href="crime_2022">Offending Patterns 2022</a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                      <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2022</a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                      <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
-                  </li> -->
-              <!-- </ul> -->
-          </div>
-      </div>
+    <div class="container-fluid">
+      <h1>Offending Patterns 2022</h1>
+      <a class="nav-link active" href="/">Click to return to 'Crimes in Victoria 2019-2022'</a>
+    </div>
   </nav>
 
-  <div style="position:middle; bottom: 0; width:100%; height:60px;" >
-    <p></p>
-    <!-- boostrp and look for footers fpr minty  -->
+
+  <p></p>
+
   </div>
 
-<style>
-  .node {
-    cursor: pointer;
-    fill:rgb(180, 184, 171);
-  }
+  <style>
+    .node {
+      cursor: pointer;
+      fill: rgb(180, 184, 171);
+    }
 
-  .node:hover {
-    stroke: rgb(74, 28, 46);
-    stroke-width: 8.5px;
+    .node:hover {
+      stroke: rgb(74, 28, 46);
+      stroke-width: 8.5px;
 
-  }
+    }
 
-  .node--leaf {
-    fill: rgb(255, 255, 255);
-  }
+    .node--leaf {
+      fill: rgb(255, 255, 255);
+    }
 
-  .node--root { 
-    fill:rgb(180, 184, 171);
-  }
+    .node--root {
+      fill: rgb(180, 184, 171);
+    }
 
-  .textnode {
-    font: 30px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-anchor: middle;
-    text-shadow: 0 2px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
-  }
+    .textnode {
+      font: 30px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-anchor: middle;
+      text-shadow: 0 2px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    }
 
-  .textnode--leaf {
-    font: 30px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-anchor: middle;
-    text-shadow: 0 2px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
-  }
+    .textnode--leaf {
+      font: 30px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-anchor: middle;
+      text-shadow: 0 2px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    }
 
-  .label,
-  .node--root,
-  .node--leaf {
-    pointer-events: none;
-  }
-</style>
-
-<!-- <body>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="indexcrime.html">Crime in Victoria 2019-2022</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse spacing" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="indexoffendingpatterns.html">Offending Patterns</a>
-          </li>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2022</a>
-          </li>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="indexoffencedivisions2021.html">Offending 2021</a>
-        </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
+    .label,
+    .node--root,
+    .node--leaf {
+      pointer-events: none;
+    }
+  </style>
 
 
   <svg width="1400" height="1400"></svg>
+
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script>
 
@@ -132,40 +74,6 @@
       margin = 20,
       diameter = +svg.attr("width"),
       g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
-
-  // This is where I ahve strted adding your code 
-  
-//       var color = d3.scaleOrdinal().range(d3.schemeCategory10)
-
-//     offenceDivisions = [
-//   0: "A Crimes against the person "
-//   1: "B Property and deception offences"
-//   2: "C Drug offences"
-//   3: "D Public order and security offencesords"
-//   5: "E Justice procedures offences"
-//   6: "F Other offences "
-// ]
-//       = {
-//         color.domain([
-//   0: "A Crimes against the person "
-//   1: "B Property and deception offences"
-//   2: "C Drug offences"
-//   3: "D Public order and security offencesords"
-//   4: "E Justice procedures offences"
-//   5: "F Other offences "
-// ].split(/ /));
-//         return color.domain();
-// }
-
-// offenceDivisionColors = [
-//   0: "#cbd4c2ff"
-//   1: "#dbebc0ff"
-//   2: "#c3b299ff"
-//   3: "#815355ff"
-//   4: "#523249ff"
-//   5: "'#000000'
-// ]
-// // This is where it ends 
 
 
     var color = d3.scaleLinear()
@@ -188,11 +96,48 @@
         nodes = pack(root).descendants(),
         view;
 
+      // Match colors of cicles with those in the summary chart using scale : +25% Darker -25% Saturate
+
+      var color_A = d3.scaleLinear()
+        .domain([0, 1, 2, 3])
+        .range(["white", "#CBE1B5", "#cbd4c2ff", "#8B9F77"]);
+
+      var color_B = d3.scaleLinear()
+        .domain([0, 1, 2, 3])
+        .range(["white", "#e9f3d8", "#dbebc0ff", "#c5d3ab"]);
+
+      var color_C = d3.scaleLinear()
+        .domain([0, 1, 2, 3])
+        .range(["white", "#dbd0c0", "#c3b299", "#756a5a"]);
+
+      var color_D = d3.scaleLinear()
+        .domain([0, 1, 2, 3])
+        .range(["white", "#a68687", "#815355", "#5a5a3a"]);
+
+      var color_E = d3.scaleLinear()
+        .domain([0, 1, 2, 3])
+        .range(["white", "#a898a3", "#523249", "#412839"]);
+
+      var color_F = d3.scaleLinear()
+        .domain([0, 1, 2, 3])
+        .range(["white", "#323231", "#000000", "#00000"]);
+
+
       var circle = g.selectAll("circle")
         .data(nodes)
         .enter().append("circle")
         .attr("class", function (d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
-        .style("fill", function (d) { return d.children ? color(d.depth) : null; })
+        // .style("fill", function (d) { return d.children ? color(d.depth) : null; })
+        .style("fill", function (d) {
+          if (d.children && d.data.name.substring(0, 1) === "A") return color_A(d.depth);
+          if (d.children && d.data.name.substring(0, 1) === "B") return color_B(d.depth);
+          if (d.children && d.data.name.substring(0, 1) === "C") return color_C(d.depth);
+          if (d.children && d.data.name.substring(0, 1) === "D") return color_D(d.depth);
+          if (d.children && d.data.name.substring(0, 1) === "E") return color_E(d.depth);
+          if (d.children && d.data.name.substring(0, 1) === "F") return color_F(d.depth);
+          return null;
+        })
+        .style("fill-opacity", function (d) { return d.parent === root ? 1 : 0.5; })
         .on("click", function (d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
 
       var text = g.selectAll("text")
@@ -242,31 +187,15 @@
       }
     });
 
-// add class to name of crime to node 
-
-
-
-//     var toolTip = d3.tip()
-//       .attr("class", "tooltip")
-//       .offset([85, -90])
-//       .html(function (d) {
-//         return (`${d.state}<br>${yLabel}: ${d[chosenYAxis]}<br>${xLabel}: ${d[chosenXAxis]}`);
-//       });
-
-//     circlesGroup.call(toolTip);
-
-//     circlesGroup.on("mouseover", (d, i, n) => toolTip.show(d, n[i]));
-//     circlesGroup.on("mouseout", (d, i, n) => toolTip.hide(d, n[i]));
-
-//     return circlesGroup;
-// }
-
-
-
   </script>
-  
-  </body>
 
-  
+  </div>
+  <br><br>
+  <div id="footer">
+    <p>Data source: https://www.data.vic.gov.au</p>
+    <p>Julia Cooper&copy;2022</p>
+  </div>
 
-  </html>
+</body>
+
+</html>

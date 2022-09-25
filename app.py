@@ -25,14 +25,6 @@ DB_conn = "postgresql://yumurxqtwshjnx:fd683e2aa6f171ff752079e8833a7c447db446d1f
 
 engine = create_engine (DB_conn)
 
-# Remove tracking modifications
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# db = SQLAlchemy(app)
-
-# from .models import offence_division_summary, offence_2022
-
-
 # create route that renders index.html template
 @app.route("/")
 def home():
@@ -73,7 +65,6 @@ def crime_2022():
     filter_df = offence_2022_df.groupby(["Offence Division","Offence Subdivision", "Offence Subgroup"])["Incidents Recorded"].sum()
     filter_df = filter_df.reset_index()
 
-     
 
     flare = {"name": "flare", "children": []}
 

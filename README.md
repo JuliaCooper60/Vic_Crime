@@ -1,90 +1,99 @@
+
 # Project 3 - Crime in Victoria 2019-2022
 
 ![Crime in Victoria 2019-2022](/Images/Police_Picture1.jpg)
 
-## Why this topic?
-        1. Data availability 
-        2. Data hierarchy supports data visual visualisation 
-        3. Government are interested
+##Background and Context:
 
-## Challenges
-        1. Data quality  
-        2. Joins proved tricky 
-        3. Size limits with Heroku
-
-
+                The Victorian Government publishes data in relation to offending types and patterns. It is reported by five geographical levels in Victoria. The data is grouped into 6 separate 'Offence Divisions' with each of these divisions being broken
+                down into Subdivisions and then further into Subgroups.
+                
+                This topic was chosen for this project for these key reasons:
+                1. A comprehensive data set that covers 9 years is publicly available.
+                2. It is also local to Victoria and current (within 6 months); thus has a high level of relevance
+                2. The data is structured hierarchically with a level of cleaning and manipulation, supporting a layered data visual visualisation.
 
 
-, you will build an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonise human navels.
+##Challenges and limitations:
+                Data Consistency: The data was organised into multiple tables within multiple workbooks. While initially, the data looked clean and well organised, it rapidly became apparent that each of the workbooks contained data that were derived from different data sources where different filters were applied as there were contradictions in the number of incidents for what appeared to be the same groupings. To overcome this, data was sourced from a single workbook. 
 
-The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
+                Data quality: There were also issues with data quality with extra spaces that impacted data ingestion and additional headings within the rows that resulted in duplication of a number of incidents. This was resolved with dropping of rows and stripping of blanks using the function .str.strip()
 
-## Step 1: Plotly
+                Data merging: Joining data sets to gain the data required in one data frame resulted in either blank data fields or duplication of rows. This was resolved by using the method that resulted in duplication of rows and applying the .drop_duplicates() function
 
-1. Use the D3 library to read in `samples.json`.
+                Data quantity limitation in Heroku: Heroku has a limit of 10,000 rows. The original intention had been to compare the number of incidents by offending subcategories by year. However, the data for each year contained just over 5,000 rows (resulting in> 20,000 rows). The design of the data analysis and visualisation was changed to work within this limitation.
+   
+##Model Design and Delivery
 
-2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
+### Step 1: Data Preparation:
+1.1. Data retrieved from excel workbook, ingested and converted to CSV files and a list of data frames
+1.2. Initial Data cleaning and organization:
+   * Select data for 2019-2022 years 
+   * Merge police regions and local government areas (LGAs) into one data frame
+   * Create data frames 
+        * offence_division_summary_df (a summary of Offence Divisions by year, police region and LGA)
+        * offence_2019_2022_df (all data for future analysis not loaded into Heroku db)
+        * offence_2022_df (full data set for 2022)
 
-* Use `sample_values` as the values for the bar chart.
+### Step 2: Set up and connect to Heroku DataBase
 
-* Use `otu_ids` as the labels for the bar chart.
+2.1. Connect to, create tables for and load data into Heroku database: offence_division_summary', 'offence_2022'![Vic_crime_ERD](Images/Vic_crime_ERD.png) * Note: while some of the field names are identical, there are no relationships between these 2 tables as they view the data from different perspectives, and there are many to-one relationships between like fields.)
 
-* Use `otu_labels` as the hovertext for the chart.
+## Step 3; Transform Data
 
-  ![bar Chart](Images/hw01.png)
+3.1. Prepare data for specific visualisations
+        * Chart 1: Create JSNON file using 'offence_division_summary' table
+        * Chart 2: Create JNSO flare file using 'offence_2022 table
 
-3. Create a bubble chart that displays each sample.
+## Step 4; Create charts and web pages 
 
-* Use `otu_ids` for the x values.
+4.1: index.html: Crime in Victora 2019 - 2022 
+ * Chart Title: Number of incidents by Offence Division by Year 
+ * Chart Style: chartsjs - Bar Chart  
+ * Data source: JSON file created from 'offence_division_summary' data table read directly from the Heroku Data Base
+ * Style: d3Style.css, styles.css
+ * Code created: in ipynb, mychart.js and index.html 
+ * Image of chart: ![Number of Incidents by Offence Division by Year](Images/Incidents_by_Offence_Divisions_2019-_2022.png)
+ * Image of full html page: [Crime in Victoria 2019-2022](Images/index.html.png)
+ * Code created: in ipynb, mychart.js and index.html 
 
-* Use `sample_values` for the y values.
-
-* Use `sample_values` for the marker size.
-
-* Use `otu_ids` for the marker colours.
-
-* Use `otu_labels` for the text values.
-
-![Bubble Chart](Images/bubble_chart.png)
-
-4. Display the sample metadata, i.e., an individual's demographic information.
-
-5. Display each key-value pair from the metadata JSON object somewhere on the page.
-
-![hw](Images/hw03.png)
-
-6. Update all of the plots any time that a new sample is selected.
-
-Additionally, you are welcome to create any layout that you would like for your dashboard. An example dashboard is shown below:
-
-![hw](Images/hw02.png)
-
-## Advanced Challenge Assignment (Optional)
-
-The following task is advanced and therefore optional.
-
-* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
-
-* You will need to modify the example gauge code to account for values ranging from 0 through 9.
-
-* Update the chart whenever a new sample is selected.
-
-![Weekly Washing Frequency Gauge](Images/gauge.png)
-
-## Deployment
-
-Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo.
-
-## Hints
-
-* Use `console.log` inside of your JavaScript code to see what your data looks like at each step.
-
-* Refer to the [Plotly.js documentation](https://plot.ly/javascript/) when building the plots.
+4.2: index html: Offending Patterns 2022 
+ * Chart Title: Number of Incidents by Offence Division, Offence Subdivision and Offence Subgroup
+ * Chart Style: d3 Observable - stacked circle chart 
+ * Data source: JSON file created from 'offence_2022' data table read directly from the Heroku Data Base
+ * Style: styles.css
+ * Code created: in ipynb, and index2022.html
+ * Image of full html page: [Offending Patterns 2022 ](Images/index2022.html.png)
+        
+## Step 5; Deploy the Vic_Crime application to Heroku
+5.1. Create a Vic_Crime repo on Github for the application
+5.2. Preparing the application with additional configuration files (`Procfile` and `requirements.txt`)
+ * Create a new conda environment 
+ * Install 'gunicorn'
+ * install `psycopg2`
+ * pip Install flask
+ * pip Install flask-sqlalchemy
+ * pip Install pandas
+ * initialise the database: `initdb.py`
+ * make the `run.sh` file executable
+ * Navigate to `127.0.0.1:5000` to view your webpage and test out the app before deploying on Heroku. 
+ * Use` postgres` and add the app to Heroku.
+ * Configuration: `Procfile` - used by Heroku to run the app.
+5.3. Creating the Heroku application
+* Create a new app in Heroku database
+* Deploy the app
+5.4  Preparing, adding and initialising the Heroku database
+* Create link to Heroku in  Prostfres
+* Initialise is the database
 
 ### About the Data
+Data was sourced from https://www.crimestatistics.vic.gov.au/crime-statistics/latest-crime-data-by-area
 
-Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable_. Retrieved from: [http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
+### About Circle Packing 
+Original concept sourced  from https://observablehq.com/@d3/pack
+// Copyright 2021 Observable, Inc.
+// Released under the ISC license.
+// https://observablehq.com/@d3/pack
 
-- - -
-
+### About Heroku Deployment 
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
