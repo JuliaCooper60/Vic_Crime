@@ -1,4 +1,4 @@
-
+// identity JSON file that is the data source
 
 var bardata;
 // Create a lsit of LGAs
@@ -84,6 +84,9 @@ var lgalist =
  'Yarra Ranges',
  'Yarriambiack']
 
+//  Read in data from Heroku db via api and create the chart 
+// Not ethis was meant to be a stacked chart but the end result of the bars placed side by side was the preferred option
+
  d3.json('api/crime_summary').then((barData) => {
 
   barDataFull = barData;
@@ -107,6 +110,7 @@ var lgalist =
 
   });
 
+//   Create the ability to filter the cahrt by LGA
 
 for (i=0; i< lgalist.length; i++)
 {

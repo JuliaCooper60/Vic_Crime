@@ -1,14 +1,8 @@
 
 
-  /* .navbar-brand{
-
-    font-size: 80px;
-    font-weight: bold;
-    color: lightseagreen;
-     } */
 
   .nav-link .active {
-    font-size: 20px;
+    font-size: 30px !important;
     color: lightseagreen !important;
        }
  
@@ -108,32 +102,6 @@ body {
 
 }
 
-#sidebar-image {
-  /* background-image: url("Picture 2.jpg") repeat; 
-  opacity: .2;
-  border:  2px solid black; */
-  /* background-color:  170F33  */
-}
-
-#transbox {
-  /* background-image: url("Picture 2.jpg") repeat;  */
-  /* opacity: .2; */
-  /* border:  2px solid black; */
- 
-
-}
-
-
-/* .imageNav-photo {
-  Width:180px;
-  height: 150px;
-  border: 2px solid #4AAAA5; 
-}  */
-
-
-
-
-
 
   h2 {
       color: lightseagreen;
@@ -143,3 +111,8 @@ body {
   margin-left: 50%;
 }
 
+#svg {
+  position: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

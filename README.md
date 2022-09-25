@@ -5,23 +5,24 @@
 
 ##Background and Context:
 
-                The Victorian Government publishes data in relation to offending types and patterns. It is reported by five geographical levels in Victoria. The data is grouped into 6 separate 'Offence Divisions' with each of these divisions being broken
-                down into Subdivisions and then further into Subgroups.
+The Victorian Government publishes data in relation to offending types and patterns. It is reported by five geographical levels in Victoria. The data is grouped into 6 separate 'Offence Divisions' with each of these divisions being brokendown into Subdivisions and then further into Subgroups.
                 
-                This topic was chosen for this project for these key reasons:
-                1. A comprehensive data set that covers 9 years is publicly available.
-                2. It is also local to Victoria and current (within 6 months); thus has a high level of relevance
-                2. The data is structured hierarchically with a level of cleaning and manipulation, supporting a layered data visual visualisation.
+This topic was chosen for this project for these key reasons:
+1. A comprehensive data set that covers 9 years is publicly available.
+2. It is also local to Victoria and current (within 6 months); thus has a high level of relevance
+3. The data is structured hierarchically with a level of cleaning and manipulation, supporting a layered data visual visualisation.
+
+                
 
 
 ##Challenges and limitations:
-                Data Consistency: The data was organised into multiple tables within multiple workbooks. While initially, the data looked clean and well organised, it rapidly became apparent that each of the workbooks contained data that were derived from different data sources where different filters were applied as there were contradictions in the number of incidents for what appeared to be the same groupings. To overcome this, data was sourced from a single workbook. 
+1. Data Consistency: The data was organised into multiple tables within multiple workbooks. While initially, the data looked clean and well organised, it rapidly became apparent that each of the workbooks contained data that were derived from different data sources where different filters were applied as there were contradictions in the number of incidents for what appeared to be the same groupings. To overcome this, data was sourced from a single workbook. 
 
-                Data quality: There were also issues with data quality with extra spaces that impacted data ingestion and additional headings within the rows that resulted in duplication of a number of incidents. This was resolved with dropping of rows and stripping of blanks using the function .str.strip()
+2. Data quality: There were also issues with data quality with extra spaces that impacted data ingestion and additional headings within the rows that resulted in duplication of a number of incidents. This was resolved with dropping of rows and stripping of blanks using the function .str.strip()
 
-                Data merging: Joining data sets to gain the data required in one data frame resulted in either blank data fields or duplication of rows. This was resolved by using the method that resulted in duplication of rows and applying the .drop_duplicates() function
+3. Data merging: Joining data sets to gain the data required in one data frame resulted in either blank data fields or duplication of rows. This was resolved by using the method that resulted in duplication of rows and applying the .drop_duplicates() function
 
-                Data quantity limitation in Heroku: Heroku has a limit of 10,000 rows. The original intention had been to compare the number of incidents by offending subcategories by year. However, the data for each year contained just over 5,000 rows (resulting in> 20,000 rows). The design of the data analysis and visualisation was changed to work within this limitation.
+4. Data quantity limitation in Heroku: Heroku has a limit of 10,000 rows. The original intention had been to compare the number of incidents by offending subcategories by year. However, the data for each year contained just over 5,000 rows (resulting in> 20,000 rows). The design of the data analysis and visualisation was changed to work within this limitation.
    
 ##Model Design and Delivery
 

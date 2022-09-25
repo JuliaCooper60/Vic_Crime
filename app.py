@@ -43,7 +43,7 @@ def crime_summary():
     
         dataStackedBar = {'labels': df.index.tolist(),'datasets':[]}
 
-        colors = ['#cbd4c2ff','#4DC2CA','#c3b299ff','#815355ff','#523249ff','#000000']
+        colors = ['#cbd4c2ff','#e9f3d8','#c3b299ff','#815355ff','#523249ff','#000000']
         color = 0
         for col in df.columns:
             dataStackedBar['datasets'].append({
@@ -57,6 +57,7 @@ def crime_summary():
 
     return jsonify(payload)
 
+# create route that renders index2022.html template
 
 @app.route("/api/crime_2022")
 def crime_2022():
