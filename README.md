@@ -99,4 +99,4 @@ Original concept sourced  from https://observablehq.com/@d3/pack
 // https://observablehq.com/@d3/pack
 
 ### About Heroku Deployment 
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+Instructions for Heroku Deployment sourced form materials from © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
