@@ -3,7 +3,7 @@
 
 ![Crime in Victoria 2019-2022](/Images/Police_Picture1.jpg)
 
-##Background and Context:
+### Background and Context:
 
 The Victorian Government publishes data in relation to offending types and patterns. It is reported by five geographical levels in Victoria. The data is grouped into 6 separate 'Offence Divisions' with each of these divisions being brokendown into Subdivisions and then further into Subgroups.
                 
@@ -15,7 +15,7 @@ This topic was chosen for this project for these key reasons:
                 
 
 
-##Challenges and limitations:
+### Challenges and limitations:
 1. Data Consistency: The data was organised into multiple tables within multiple workbooks. While initially, the data looked clean and well organised, it rapidly became apparent that each of the workbooks contained data that were derived from different data sources where different filters were applied as there were contradictions in the number of incidents for what appeared to be the same groupings. To overcome this, data was sourced from a single workbook. 
 
 2. Data quality: There were also issues with data quality with extra spaces that impacted data ingestion and additional headings within the rows that resulted in duplication of a number of incidents. This was resolved with dropping of rows and stripping of blanks using the function .str.strip()
@@ -24,7 +24,7 @@ This topic was chosen for this project for these key reasons:
 
 4. Data quantity limitation in Heroku: Heroku has a limit of 10,000 rows. The original intention had been to compare the number of incidents by offending subcategories by year. However, the data for each year contained just over 5,000 rows (resulting in> 20,000 rows). The design of the data analysis and visualisation was changed to work within this limitation.
    
-##Model Design and Delivery
+### Model Design and Delivery
 
 ### Step 1: Data Preparation:
 1.1. Data retrieved from excel workbook, ingested and converted to CSV files and a list of data frames
@@ -63,8 +63,10 @@ This topic was chosen for this project for these key reasons:
  * Chart Style: d3 Observable - stacked circle chart 
  * Data source: JSON file created from 'offence_2022' data table read directly from the Heroku Data Base
  * Style: styles.css
- * Code created: in ipynb, and index2022.html
+ * Image of chart: ![Number of Incidents by Offence Division, Offence Subdivision and Offence Subgroup 2022](Images/Incidents_by_Offence_groups_2022.png)
  * Image of full html page: [Offending Patterns 2022 ](Images/index2022.html.png)
+ * Code created: in ipynb, and index2022.html
+
         
 ## Step 5; Deploy the Vic_Crime application to Heroku
 5.1. Create a Vic_Crime repo on Github for the application
